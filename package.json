@@ -10,13 +10,22 @@
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "release:patch": "standard-version && git push --tags",
     "release:minor": "standard-version --release-as minor && git push --tags",
-    "release:major": "standard-version --release-as major && git push --tags"
+    "release:major": "standard-version --release-as major && git push --tags",
+    "lambda:serve": "netlify-lambda serve lambda --config webpack.functions.js",
+    "lambda:build": "netlify-lambda build lambda --config webpack.functions.js"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.8.3",
+    "@types/aws-lambda": "^8.10.46",
+    "@types/node": "^13.7.7",
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
     "standard-version": "^7.1.0",
     "ts-node": "^7.0.1",
-    "typescript": "^3.0.1"
+    "typescript": "^3.8.3",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "netlify-lambda": "^1.6.3"
   }
 }
