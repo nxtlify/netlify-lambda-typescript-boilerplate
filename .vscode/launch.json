@@ -18,7 +18,7 @@
             "type": "node",
             "request": "attach",
             "name": "Debug Lambda Server",
-            "port": 9000,
+            "port": 9229,
             "skipFiles": ["<node_internals>/**"]
         }
     ]

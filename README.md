@@ -1,6 +1,6 @@
-# A minimal setup to Debug TypeScript on Node in VSCode
+# Netlify Lambda Typescript Boilerplate
 
-Please note that this repository serves as an example of one way that I've found to set up a minimal project which allows for debugging TypeScript that is running on Node in VSCode. At the time of writing I've only tested on a x64 based Windows 10 machine and have not verified that the same steps work in a multitude of other configurations or environments. Please note also the [prerequisites](#prerequisites) as well as an indication of what worked for me.
+A minimal setup to Debug TypeScript on Node in VSCode.
 
 ## Prerequisites:
 
@@ -20,7 +20,7 @@ Please note that this repository serves as an example of one way that I've found
 To get started first clone this repo:
 
 ```bash
-git clone https://github.com/sajjad-shirazy/typescript-node-vscode
+git clone https://github.com/sajjad-shirazy/netlify-lambda-typescript-boilerplate
 ```
 
 Install node package dependencies (typescript and ts-node):
@@ -35,25 +35,25 @@ Start up VSCode if you haven't already (tested with VSCode v1.25.1):
 code .
 ```
 
-Set a breakpoint on one of the lines such as line 5 in [index.ts](/index.ts) and start debugging by pressing the `F5` key or select `Debug: Start Debugging` form the VSCode command pallet.
+### Build
+
+```bash
+npm run lambda:build
+```
 
 ### Start
 
 ```bash
-npm start
+npm run lambda:serve
 ```
 
-### Development (nodemon)
+### Debug
 
 ```bash
-npm run dev
+npm run lambda:serve
 ```
 
-### Build
-
-```bash
-npm run build
-```
+and then you should start `Debug Lambda Server` from Run& Debug panel. sourcemaps doesn't work so you have to set breakpoints on `./dist` files.
 
 ### Fromatting all source codes
 
